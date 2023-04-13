@@ -29,7 +29,7 @@ function App() {
         console.log("Make sure you have Metamask installed");
         return null;
       }
-      const provider = new ethers.providers.JsonRpcProvider(config.defaultChainID);
+      const provider = new ethers.providers.JsonRpcProvider(config.defaultRPC);
       setProvider(provider);
       const network = await provider.getNetwork();
       console.log(network)
