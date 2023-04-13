@@ -33,13 +33,10 @@ function App() {
       setProvider(provider);
       const network = await provider.getNetwork();
       console.log(network)
-      const escrowAddress =config[network.chainId].escrow.address;
-
-      console.log(config[network.chainId].escrow.address);
-      console.log(config[network.chainId].realEstate.address);
+      const escrowAddress =config[config.defaultChainID].escrow.address;
 
       const realEstate = new ethers.Contract(
-        config[network.chainId].realEstate.address,
+        config[config.defaultChainID].realEstate.address,
         RealEstate,
         provider
       );

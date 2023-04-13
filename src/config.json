@@ -6,5 +6,6 @@
     "escrow": {
       "address": "0xc5FcdEd498B655598c0e191b94fcd15D2EF5C9C5"
     }
-  }
+  },
+  "defaultChainID": "80001"
 }
