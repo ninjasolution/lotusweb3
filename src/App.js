@@ -29,11 +29,14 @@ function App() {
         console.log("Make sure you have Metamask installed");
         return null;
       }
-      const provider = new ethers.providers.Web3Provider(ethereum);
+      const provider = new ethers.providers.JsonRpcProvider("https://mumbai.rpc.thirdweb.com");
       setProvider(provider);
       const network = await provider.getNetwork();
       console.log(network)
-      const escrowAddress =config[config.defaultChainID].escrow.address;
+      const escrowAddress = config[config.defaultChainID].escrow.address;
+
+      console.log(config[config.defaultChainID].escrow.address);
+      console.log(config[config.defaultChainID].realEstate.address);
 
       const realEstate = new ethers.Contract(
         config[config.defaultChainID].realEstate.address,
